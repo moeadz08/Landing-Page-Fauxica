@@ -1,0 +1,448 @@
+body {
+    background: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+
+/* hedar */
+
+header {
+    display: flex;
+    position: relative;
+    padding: 15px 20px;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1150px;
+    margin: 0 auto;
+    animation: fadeInDown 1s ease;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo .tagline {
+    font-size: 14px;
+    color: #555;
+    margin-top: 2px;
+}
+
+.navbar a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 25%;
+    height: 1px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+.navbar a.active:before {
+    font-weight: 600;
+    position: absolute;
+    content: "";
+    left: 25%;
+    width: 25%;
+    height: 1px;
+    border-bottom: 1px solid black;
+    bottom: 0px;
+}
+
+
+/*main*/
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 0 0;
+    gap: 100px;
+    animation: fadeInUp 1s ease;
+}
+
+main.home {
+    gap: 80px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1150px;
+    padding: 80px 20px 40px 20px;
+    margin: 0 auto;
+}
+
+.home-content-left {
+    flex-basis: 45%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+}
+
+.big-home {
+    margin-bottom: 15px;
+}
+
+.big-home h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 30px 0;
+}
+
+.big-home p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.browse {
+    text-decoration: none;
+    color: #000;
+    background-color: #f0e68c;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+}
+
+.browse:hover {
+    background-color: #e0d588;
+}
+
+.underlined {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.underlined span {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.underlined span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.underlined .svg {
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+
+.underlined:hover span::after {
+    width: 100%;
+}
+
+.underlined:hover svg {
+    transform: translateX(5px);
+}
+
+span.btn2 {
+    color: #555;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+span.btn2:hover {
+    color: #1a1a1a;
+}
+
+.limapuluh {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    max-width: 350px;
+}
+
+.gocap {
+    font-size: 30px;
+}
+
+.teksgocap {
+    font-size: small;
+}
+
+
+/* --- Card Grid --- */
+
+.card-grid {
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card.tall {
+    grid-row: span 2;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    margin: 12px 12px 0px 12px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    transform: translateY(8px);
+    transition: all 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card:hover .card-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* isi */
+
+.card-content .text h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.card-content .text p {
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.card-content .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Responsive Design --- */
+
+
+/* For screens smaller than 1050px (e.g., tablets and smaller desktops) */
+
+@media (max-width: 1050px) {
+    main {
+        gap: 50px;
+        margin-top: 40px;
+    }
+    .home-content-left {
+        flex-basis: 50%;
+    }
+    .big-home h1 {
+        font-size: 36px;
+    }
+    .card-grid {
+        max-width: 400px;
+        gap: 15px;
+    }
+}
+
+
+/* For screens smaller than 800px (e.g., large tablets in portrait) */
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 5px;
+    }
+    .navbar {
+        margin-top: 15px;
+    }
+    .navbar a {
+        padding: 5px 8px;
+        font-size: 0.95em;
+    }
+    main {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        gap: 60px;
+    }
+    .home-content-left {
+        flex-basis: auto;
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .big-home {
+        max-width: 100%;
+    }
+    .big-home h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .big-home p {
+        max-width: 80%;
+        margin: 0 auto 15px auto;
+    }
+    .limapuluh {
+        flex-direction: column;
+        max-width: 300px;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .card-grid {
+        max-width: 500px;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 10px;
+    }
+    header {
+        align-items: center;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar a {
+        padding: 8px 0;
+        font-size: 1em;
+    }
+    .logo {
+        align-items: center;
+    }
+    .btn {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .browse {
+        width: 80%;
+        max-width: 300px;
+        /* Limit button size */
+        padding: 12px;
+    }
+    .card-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+    }
+    .card.tall {
+        grid-row: span 1;
+    }
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1190px) {
+    main {
+        max-width: 1150px;
+        padding: 0;
+    }
+}
